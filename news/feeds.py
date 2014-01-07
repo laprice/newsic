@@ -7,7 +7,7 @@ class Feed():
     
     There can be multiple flavors (for instance Twitter feeds are fetched as json).
     """
-    def __init__(self, source, **kwargs)
+    def __init__(self, source, **kwargs):
         self.source = source
         if history:
             self.history = History(history)
