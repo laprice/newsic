@@ -5,8 +5,13 @@ from feeds import Feed
 
 
 class TestFeedFetchFromURL(unittest.TestCase):
-    def SetUp():
-        pass
+    def setUp(self):
+        self.feedlist = [ 'http://news.ycombinator.com/rss' ]
+    
+    def test_feeds(self):
+        f = [ Feed(feed) for feed in self.feedlist ]
+        n = f.pop()
+        self.assertIsInstance(Feed,n)
 
 if __name__=='__main__':
     unittest.main()
