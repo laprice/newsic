@@ -11,7 +11,7 @@ class TestFeedFetchFromURL(unittest.TestCase):
     def test_feeds(self):
         f = [ Feed(feed) for feed in self.feedlist ]
         n = f.pop()
-        self.assertIsInstance(Feed,n)
+        self.assertIsInstance(n,Feed)
 
 if __name__=='__main__':
     unittest.main()
