@@ -9,9 +9,9 @@ class Feed():
     """
     def __init__(self, source, **kwargs):
         self.source = source
-        if history:
+        if kwargs.has_key('history'):
             self.history = History(history)
-        if title:
+        if kwargs.has_key('title'):
             self.title
         else:
             self.title = self.source
