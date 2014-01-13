@@ -18,7 +18,7 @@ class Feed():
 
     def __str__(self):
         template = """title: %(title)s\nsource: %(source)s"""
-        
+        return template % self.__dict__
 
 class History():
     def __init__(self, history_label):
