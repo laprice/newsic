@@ -20,6 +20,11 @@ class Feed():
         template = """title: %(title)s\nsource: %(source)s"""
         return template % self.__dict__
 
+    def fetch(self):
+        self.raw = feedparser.parse(self.source)
+        self.current_items = self.raw['items']
+        return len(self.current_items)
+
 class History():
     def __init__(self, history_label):
         self.label = history_label # primary key for history objects
