@@ -19,5 +19,10 @@ class TestFeedFetchFromURL(unittest.TestCase):
 source: http://news.ycombinator.com/rss"""
         self.assertEquals(n.__str__(),t)
 
+    def test_feed_parse(self):
+        n = self.f[0]
+        n.fetch()
+        self.assertIsInstance(n.current_items,type([]))
+
 if __name__=='__main__':
     unittest.main()
