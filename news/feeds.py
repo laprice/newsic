@@ -1,4 +1,4 @@
-
+import feedparser
 class Feed():
     """
     Feed objects are the primary abstraction used.

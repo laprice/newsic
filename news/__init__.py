@@ -2,3 +2,5 @@
 
 import feedparser
 import newspaper
+
+from .feeds import Feed
