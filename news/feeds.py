@@ -33,12 +33,13 @@ class Feed():
 class History():
     def __init__(self, history_label):
         self.label = history_label # primary key for history objects
-        if self.recover(sha1(self.label))
+        
+        self.recover(sha1(self.label))
 
-    def recover(self):
+    def recover(self, key):
         pass
     
-    def update(self):
+    def update(self, raw):
         pass
 
 
