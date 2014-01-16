@@ -1,4 +1,6 @@
 import feedparser
+from hashlib import sha1
+
 class Feed():
     """
     Feed objects are the primary abstraction used.
@@ -9,12 +11,14 @@ class Feed():
     """
     def __init__(self, source, **kwargs):
         self.source = source
-        if kwargs.has_key('history'):
-            self.history = History(history)
         if kwargs.has_key('title'):
             self.title
         else:
             self.title = self.source
+        if kwargs.has_key('history'):
+            self.history = History(history)
+        else:
+            self.history = History(self.source)
 
     def __str__(self):
         template = """title: %(title)s\nsource: %(source)s"""
@@ -23,12 +27,20 @@ class Feed():
     def fetch(self):
         self.raw = feedparser.parse(self.source)
         self.current_items = self.raw['items']
+        self.history.update(self.raw)
         return len(self.current_items)
 
 class History():
     def __init__(self, history_label):
         self.label = history_label # primary key for history objects
-        
+        if self.recover(sha1(self.label))
+
+    def recover(self):
+        pass
+    
+    def update(self):
+        pass
+
 
     
 
