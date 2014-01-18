@@ -30,6 +30,11 @@ class Feed():
         self.history.update(self.raw)
         return len(self.current_items)
 
+    def display(self):
+        for i in self.current_items:
+            print i['title'], ": ", i['link']
+
+
 class History():
     def __init__(self, history_label):
         self.label = history_label # primary key for history objects
