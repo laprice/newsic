@@ -34,7 +34,7 @@ class Feed():
         display_lines = []
         for i in self.current_items:
             display_lines.append( "%(title)s : %(link)s" % i )
-        return "".join('\n',display_lines)
+        return "\n".join(display_lines)
 
 
 class History():
