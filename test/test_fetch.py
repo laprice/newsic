@@ -27,7 +27,7 @@ source: http://news.ycombinator.com/rss"""
 
     def test_display(self):
         for f in self.feedlist:
-            self.AssertEquals(len(f.current_items),len(self.display().split('\n')))
+            self.assertEquals(len(f.current_items),len(self.display().split('\n')))
 
 if __name__=='__main__':
     unittest.main()
