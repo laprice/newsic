@@ -31,8 +31,10 @@ class Feed():
         return len(self.current_items)
 
     def display(self):
+        display_lines = []
         for i in self.current_items:
-            print i['title'], ": ", i['link']
+            display_lines.append( "%(title)s : %(link)s" % i )
+        return display_lines
 
 
 class History():
