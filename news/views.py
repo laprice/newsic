@@ -14,4 +14,4 @@ counts = [ (f.title, f.fetch() ) for f in bleah ]
 
 
 for b in bleah:
-    b.display()
+    pprint.pprint(b.display())
