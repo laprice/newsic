@@ -26,8 +26,9 @@ source: http://news.ycombinator.com/rss"""
         self.assertIsInstance(n.current_items,type([]))
 
     def test_display(self):
-        for f in self.feedlist:
-            self.assertEquals(len(f.current_items),len(self.display().split('\n')))
+        fds = [ f.fetch() for f in self.f ]
+        for f in self.f:
+            self.assertEquals(len(f.current_items),len(f.display().split('\n')))
 
 if __name__=='__main__':
     unittest.main()
