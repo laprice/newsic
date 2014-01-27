@@ -1,5 +1,8 @@
 import feedparser
 from hashlib import sha1
+import psycopg2
+
+db = psycopg2.connect('host=localhost port=5432 user=newsic dbname=newsic password=newsicalchairs')
 
 class Feed():
     """
@@ -44,7 +47,8 @@ class History():
         self.recover(sha1(self.label))
 
     def recover(self, key):
-        pass
+        db.cursor()
+        db.execute("select * from history where hash='%s'", self.label)
     
     def update(self, raw):
         pass
